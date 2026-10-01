@@ -12,7 +12,7 @@
             "nama" => "Coldplay - Music of the Spheres",
             "tanggal" => "2026-03-15",
             "kategori" => "Festival",
-            "harga" => 1
+            "harga" => 1500000
         ],
         [
             "nama" => "Dewa 19 Reunion Show",
@@ -28,7 +28,16 @@
         ]
     ];
     ?>
+    <?php
+        $hargaAsli = $daftarKonser[0]["harga"];
+        $persenDiskon = 20;
+        $hargaSetelahDiskon = $hargaAsli - ($hargaAsli * $persenDiskon / 100);
+        $tiketMasihAda = $daftarKonser[0]["harga"] > 0;
+    ?>
     <p>Konser terdekat: <?php echo $daftarKonser[0]["nama"]; ?></p>
     <p>Tanggal: <?php echo $daftarKonser[0]["tanggal"]; ?></p>
+    <p>Harga asli: Rp<?php echo $hargaAsli; ?></p>
+    <p>Setelah diskon <?php echo $persenDiskon; ?>%: Rp<?php echo $hargaSetelahDiskon;
+    ?></p>
 </body>
 </html>
